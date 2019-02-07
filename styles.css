@@ -1,0 +1,133 @@
+body{
+    background-color: lightcyan;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background: url(sorvete.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+.grid {
+    display: grid;
+    grid-template-rows: repeat(5, minmax(30px, auto));
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-areas:    
+        "header header header header header"
+        "sidebar sidebar sidebar sidebar sidebar"
+         "main main main main main";
+}
+
+
+header{
+    align-items: center;
+    display: flex;
+    grid-area: header;
+    justify-content: space-between;
+    padding: 0 10px;
+    letter-spacing: 4px;
+}
+
+header nav{
+    display: none;
+}
+
+
+header nav a{
+    text-decoration: none;
+    font-family: sans-serif;
+    font-weight: bold;
+    color: gold; 
+}
+
+.menu-hamburguer{
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 30px;
+}
+
+.traco{
+    background-color: darkturquoise;
+    border-radius: 10px;
+    height: 3px;
+    margin: 1.5px 0;
+    width: 100%;
+
+}
+.sidebar{
+    background-color: blue;
+    grid-area: sidebar;
+    padding: 30px 0;
+}
+
+.sidebar nav {
+align-items: center;
+display: flex;
+justify-content: space-evenly;
+text-align: center;
+}
+ 
+.sidebar nav a{
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+main{
+    grid-area: main
+}
+
+/*Media Query/*
+/*BREAKPOINT PARA TABLET*/
+@media (min-width: 768px){
+    header nav {
+        display: block;
+    }
+
+
+    .menu-hamburguer{
+        display: none;
+    }
+}
+
+/*BREAKPOINT PARA NOTEBOKS PEQUENOS*/
+@media (min-width: 992px){
+
+.grid{
+    grid-template-areas:
+    "header header header header header"
+    "main main main . ."    
+    "main main main . .";    
+
+}
+
+.sidebar{
+    border-radius: 25px;
+    box-shadow: 1px 1px 10px 1px rgba (0, 0, 0, 1);
+    margin: 5px;
+}
+.sidebar nav{
+flex-direction: column;
+justify-content: center;
+font-weight: bold;
+font-size: 15px;
+}
+}
+
+/*BREAKPOINT PARA NOTEBOOK GRANDE OU DESKTOP*/
+@media (min-width: 1200px){
+}
+main{
+    margin: auto;
+    max-width: 1200px;
+}
+
+main p{
+    padding: 10px;
+}
+
